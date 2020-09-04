@@ -1,14 +1,14 @@
 <odoo>
-    
+
     <record id="see_only_partners_of_my_company" model="ir.rule">
         <field name="name">Show only partners of the same company</field>
         <field name="model_id" ref="base.model_res_partner"/>
-        <field name="groups" eval="[(4, ref('base.group_public'))]"/>
+        <field name="groups" eval=""/>
         <field name="perm_read" eval="1"/>
         <field name="perm_write" eval="1"/>
-        <field name="perm_create" eval="0"/>
-        <field name="perm_unlink" eval="0"/>
-        <field name="domain_force">[('my_company_id','=',[user.company_id.id])]</field>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+        <field name="domain_force">['|',('parent_id.id','=',[user.company_id.id]),('id','=',[user.company_id.id])]</field>
     </record>
 
 </odoo>

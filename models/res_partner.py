@@ -4,13 +4,10 @@ from odoo import models, fields, api
 
 
 class ResPartner(models.Model):
-
     _inherit = 'res.partner'
 
     my_company_id = fields.Integer(string='My Company ID', compute='_compute_my_company_id')
 
-
-    @api.multi
     def _compute_my_company_id(self):
         for record in self:
             if record.parent_id:

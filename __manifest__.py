@@ -14,10 +14,10 @@
     'depends': [
         'base',
         'contacts'
-        ],
+    ],
     'data': [
         'security/security.xml',
         'views/res_partner.xml',
-        ],
+    ],
     'installable': True,
 }
